@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: Orbitron, sans-serif;
+  font-size: 16px;
+  color: black;
+  /* Prevent images and text from being (accidentally) selected */
+  user-select: none;
+}
+
+/* Common styles for multiple elements */
+
+.score-label,
+.hand-label {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.hand,
+.action {
+  width: 96px;
+  height: 96px;
+  border: 4px solid black;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.hand img,
+.action img {
+  width: 100%;
+  height: auto;
+}
+
+/* Scoreboard */
+
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 64px;
+  border-bottom: 4px solid;
+  padding: 16px 32px;
+  margin-bottom: 32px;
+}
+
+.score-label {
+  font-size: 24px;
+}
+
+.score {
+  text-align: center;
+  font-size: 48px;
+}
+
+/* Game status */
+
+.game-status {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 32px;
+  flex: 1;
+}
+
+.game-result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 160px;
+  border-top: 4px solid;
+  border-bottom: 4px solid;
+  font-size: 64px;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+
+.round-result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px 32px;
+  border: 4px solid;
+  margin: 0px auto;
+  border-radius: 8px;
+}
+
+.hand-label {
+  text-align: center;
+}
+
+.hand {
+  margin: 0 auto;
+}
+
+.hand-comparison {
+  padding-top: 16px;
+  font-family: "Nova Mono", monospace;
+  font-size: 64px;
+}
+
+/* Action board */
+
+.action-board {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  border-top: 4px solid black;
+  padding: 32px;
+  margin-top: 32px;
+}
+
+.selections {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex: 1;
+  /*
+    Shift selections to center them horizontally.
+    This is equal to .restart width + .action-board right padding
+  */
+  padding-left: 128px;
+}
+
+.action {
+  transition: all 0.1s;
+}
+
+/*
+  Element states
+
+  These have to appear on the bottom to override the above styles
+*/
+
+.collapsed {
+  height: 0;
+  border-width: 0;
+  font-size: 0;
+}
+
+.activated {
+  transform: scale(1.05);
+}
+
+.disabled {
+  opacity: 0.5;
+}

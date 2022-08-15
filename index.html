@@ -4,11 +4,65 @@
 <head>
   <meta charset="utf-8">
   <title>Rock Paper Scissors</title>
-  <script src="script.js"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nova+Mono&family=Orbitron:wght@400;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="script.js" defer></script>
 </head>
 
 <body>
-  <p>There is nothing here yet... Open the console and invoke game() to play the game.</p>
+  <div class="scoreboard">
+    <div>
+      <p class="score-label">PLAYER</p>
+      <div class="score player">0</div>
+    </div>
+    <div>
+      <p class="score-label">COMPUTER</p>
+      <div class="score computer">0</div>
+    </div>
+  </div>
+
+  <div class="game-status">
+    <div class="game-result collapsed"></div>
+    <div class="round-result">
+      <div>
+        <p class="hand-label">PLAYER</p>
+        <div class="hand player"></div>
+      </div>
+
+      <div class="hand-comparison">=</div>
+
+      <div>
+        <p class="hand-label">COMPUTER</p>
+        <div class="hand computer"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="action-board">
+    <div class="selections">
+      <div class="action selection" data-selection="rock">
+        <img src="images/rock.png" alt="Rock icon" draggable="false">
+      </div>
+      <div class="action selection" data-selection="paper">
+        <img src="images/paper.png" alt="Paper icon" draggable="false">
+      </div>
+      <div class="action selection" data-selection="scissors">
+        <img src="images/scissors.png" alt="Scissors icon" draggable="false">
+      </div>
+    </div>
+
+    <div class="action disabled restart">
+      <img src="images/restart.svg" alt="Restart icon" draggable="false">
+    </div>
+  </div>
+
 </body>
 
 </html>
